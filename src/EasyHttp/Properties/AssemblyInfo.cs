@@ -79,5 +79,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("a75f86cc-b989-4128-9589-64f345d75a72")]
+[assembly: AssemblyVersion("1.7.1")]
+[assembly: AssemblyFileVersion("1.7.1")]
 
 // Version information for an assembly managed by GitVersionTask

@@ -115,6 +115,7 @@ namespace EasyHttp.Http
 
         public virtual bool PersistCookies { get; set; }
         public virtual bool AllowAutoRedirect { get; set; }
+        public virtual IWebProxy Proxy { get; set; }
 
         public virtual void SetBasicAuthentication(string username, string password)
         {
@@ -127,6 +128,7 @@ namespace EasyHttp.Http
             if(!PersistCookies || cookieContainer == null)
                 cookieContainer = new CookieContainer();
 
+            httpWebRequest.Proxy = Proxy;
             httpWebRequest.CookieContainer = cookieContainer;
             httpWebRequest.ContentType = ContentType;
             httpWebRequest.Accept = Accept;
