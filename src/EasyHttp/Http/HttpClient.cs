@@ -122,7 +122,7 @@ namespace EasyHttp.Http
             Request.Data = null;
             Request.PutFilename = String.Empty;
             Request.Expect = false;
-            Request.KeepAlive = true;
+            //Request.KeepAlive = true;
             Request.MultiPartFormData = null;
             Request.MultiPartFileData = null;
             Request.ContentEncoding = null;
@@ -167,7 +167,7 @@ namespace EasyHttp.Http
             InitRequest(uri, HttpMethod.POST, query);
             Request.MultiPartFormData = formData;
             Request.MultiPartFileData = files;
-            Request.KeepAlive = true;
+            //Request.KeepAlive = true;
             return ProcessRequest();
         }
 
@@ -206,7 +206,7 @@ namespace EasyHttp.Http
             Request.ContentType = contentType;
             Request.PutFilename = filename;
             Request.Expect = true;
-            Request.KeepAlive = true;
+            //Request.KeepAlive = true;
             return ProcessRequest();
         }
 
@@ -217,6 +217,7 @@ namespace EasyHttp.Http
             var httpWebRequest = matchingInterceptor != null
                 ? new StubbedHttpWebRequest(matchingInterceptor)
                 : Request.PrepareRequest();
+            //httpWebRequest.Proxy = Request.Proxy;
 
             var response = new HttpResponse(_decoder);
 
